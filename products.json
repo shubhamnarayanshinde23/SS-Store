@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Asus Laptop P1",
+        "price": 69021,
+        "category": "Electronic",
+        "images": "./images/laptop-img-removebg-preview.png"
+    },
+    {
+        "id": 2,
+        "name": "Asus Laptop P1",
+        "price": 40000,
+        "category": "Electronic",
+        "images": "./images/mobile-img-removebg-preview.png"
+    },
+    {
+        "id": 3,
+        "name": "Asus Laptop P1",
+        "price": 30000,
+        "category": "Electronic",
+        "images": "./images/headphone-7877257_1280-removebg-preview.png"
+    },
+    {
+        "id": 4,
+        "name": "Asus Laptop P1",
+        "price": 70000,
+        "category": "Electronic",
+        "images": "./images/mobile-img-removebg-preview.png"
+    },
+    {
+        "id": 5,
+        "name": "Asus Laptop P1",
+        "price": 50000,
+        "category": "Electronic",
+        "images": "./images/laptop-img-removebg-preview.png"
+    },
+    {
+        "id": 6,
+        "name": "Asus Laptop P1",
+        "price": 70000,
+        "category": "Electronic",
+        "images": "./images/mobile-img-removebg-preview.png"
+    }
+]

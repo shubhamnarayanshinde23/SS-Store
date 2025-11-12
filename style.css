@@ -188,6 +188,47 @@ h3 {
   right: 20%;
 }
 
+/* Service Details Styling */
+.service-container{
+  padding: 20px;
+}
+.services{
+  border: 1px solid black;
+  width: 300px;
+  aspect-ratio: 1;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+.service-img img{
+  width: 200px;
+  aspect-ratio: 1;
+}
+.service-text h3{
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding-block: 20px;
+}
+.service-text p{
+  display: block;
+  font-size: 1.2rem;
+  color: tomato;
+  font-weight: bold;
+}
+.product-title{
+  text-align: center;
+  margin-block: 1rem;
+}
+.product-title h1{
+  /* font-size: 3.2rem; */
+  text-transform: capitalize;
+}
+.product-title h3{
+font-size: 1.2rem;
+font-weight: 400;
+}
+
 /* Media Query Screen Play */
 @media screen and (max-width: 1024px) {
   .hero-text h1 {
@@ -209,6 +250,16 @@ h3 {
     text-align: center;
     border-radius: 50%;
   }
+  .service-container{
+  padding: 20px;
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product-title{
+  margin-top: 15%;
+}
 }
 
 @media screen and (max-width: 360px) {
