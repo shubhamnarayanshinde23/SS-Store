@@ -105,6 +105,7 @@ h3 {
 }
 .cart-container .cart {
   font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .cart-items {
@@ -124,16 +125,67 @@ h3 {
   position: fixed;
   width: 300px;
   height: 100%;
-  background: peru;
+  inset: 0 -500px 0 auto;
+  background: tomato;
+  /* padding: 10px; */
   top: 0;
-  right: 0;
+  right: -500px;
   z-index: 999;
+  transition: all .3s ease-in-out;
+}
+.cart-section.active{
+  right: 0;
 }
 .cart-img img{
   width: 50px;
   height: 50px;
 }
-
+.cart-title h3{
+  text-align: center;
+  margin-block: 10%;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.cart-text{
+  width: 120px;
+}
+.cart-text h3{
+  font-size: .92rem;
+  color: azure;
+  font-weight: normal;
+}
+.cart-text p{
+  color: rgb(170, 17, 17);
+  font-size: .89rem;
+  font-weight: bold;
+}
+.cart-products{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px; 
+  transition: all .3s ease-in-out;
+}
+.cart-products.slider{
+  transform: translateX(100%);
+}
+.cart-price .cart-icon{
+  background: #fff;
+  color: #000;
+  /* padding: 10px; */
+  width: 30px;
+  aspect-ratio: 1;
+  line-height: 30px;
+  border-radius: 50%;
+  font-size: .85rem;
+  text-align: center;
+}
+.cart-price span{
+  padding-inline: 3px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
 /* Hero Section Styling */
 .hero-container {
   width: 100%;
@@ -187,6 +239,49 @@ h3 {
   bottom: 0;
   right: 20%;
 }
+.total-container{
+  position: fixed;
+  width: 300px;
+  bottom: 0;
+  padding: 20px 10px;
+  background: #fff;
+}
+.total-price{
+text-align: center;
+}
+.total-price h1{
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 500;
+  color: teal;
+  text-transform: capitalize;
+  
+}
+.total-price span{
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: red;
+}
+.price-btn-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+padding: 5px;
+}
+.price-btn-container a{
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+  border-radius: 20px;
+  background-color: #000;
+  text-decoration: none;
+  color: #fff;
+margin: 5px;
+text-align: center;
+line-height: 50px;
+}
+
+
 
 /* Service Details Styling */
 .service-container{
@@ -229,6 +324,13 @@ h3 {
 .product-title h3{
 font-size: 1.2rem;
 font-weight: 400;
+}
+.service-text span{
+  background: tomato;
+  padding: 10px 5px;
+  margin: 10px 5px;
+  display: block;
+  cursor: pointer;
 }
 
 /* Media Query Screen Play */
