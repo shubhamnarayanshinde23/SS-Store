@@ -4,6 +4,8 @@ const cartCheck = document.querySelector(".cart");
 const openCartBox = document.querySelector(".cart-section");
 const closeCartBox = document.querySelector(".close-btn");
 const addBox = document.querySelector(".cart-section");
+const cartCount = document.querySelector(".cart-items");
+const finalPrice = document.querySelector('.final-price');
 
 cartCheck.addEventListener("click", () => {
   openCartBox.classList.add("active");
@@ -13,6 +15,25 @@ closeCartBox.addEventListener("click", () => {
 });
 let productData = [];
 let existingProduct = [];
+
+const CalculateTotal = () => {
+let result = parseFloat(0);
+let bagCart = 0;
+
+
+document.querySelectorAll('.cart-products').forEach((data) => {
+  let cartValue = parseInt(data.querySelector('.qty').textContent);
+  let count = parseFloat(data.querySelector('.item-price').textContent.replace("Rs.", ""));
+  bagCart += cartValue;
+  result += count;
+})
+console.log(typeof result);
+
+cartCount.textContent = bagCart;
+finalPrice.textContent = result;
+console.log(finalPrice);
+
+};
 
 const showCards = () => {
   productData.forEach((items) => {
@@ -49,8 +70,9 @@ const AddToCart = (items) => {
   }
   existingProduct.push(items);
   let quantity = 1;
-  // let price = parseFloat(items.price.replace("Rs.", ""));
-
+  let price = items.price;
+  // console.log(price);
+  
   const cartBoxData = document.createElement("div");
   cartBoxData.classList.add("cart-products");
   cartBoxData.innerHTML = `
@@ -59,7 +81,7 @@ const AddToCart = (items) => {
             </div>
             <div class="cart-text">
                 <h3>${items.name}</h3>
-                <p class="item-price">${`Rs. ${items.price}`}</p>
+                <p class="item-price">${`${items.price}`}</p>
             </div>
             <div class="cart-price">
                 <i class="fa-solid fa-plus cart-icon plus"></i>
@@ -68,6 +90,7 @@ const AddToCart = (items) => {
             </div>
 `;
   addBox.appendChild(cartBoxData);
+  CalculateTotal();
 
   let Increment = cartBoxData.querySelector(".plus");
   let Decrement = cartBoxData.querySelector(".minus");
@@ -78,19 +101,22 @@ const AddToCart = (items) => {
     e.preventDefault();
     quantity++;
     qt.textContent = quantity;
-    // totalprice.textContent = `RS. ${(price * quantity).toFixed(2)}`;
+    totalprice.textContent = `${parseFloat(price * quantity).toFixed(2)}`; 
+    CalculateTotal();
   });
 Decrement.addEventListener('click', (e) => {
   e.preventDefault();
   if(quantity > 1){
   quantity--;
   qt.textContent = quantity;
+  totalprice.textContent = `Rs. ${price * quantity}`;
+  CalculateTotal();
   }else{
     cartBoxData.classList.add("slider");
     setTimeout(() => {
-        existingProduct.remove();
+        cartBoxData.remove();
         existingProduct = existingProduct.filter((currProd) => currProd.id !== items.id);
-        // UpdateTotal();
+        CalculateTotal();
       }, 300);
   }
 

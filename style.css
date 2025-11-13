@@ -167,6 +167,15 @@ h3 {
   padding: 10px 10px; 
   transition: all .3s ease-in-out;
 }
+.scroll-container{
+  display: flex;
+  overflow: auto;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.scroll-container::-webkit-scrollbar{
+  width: 0;
+}
 .cart-products.slider{
   transform: translateX(100%);
 }
